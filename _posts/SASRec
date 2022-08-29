@@ -1,0 +1,103 @@
+---
+layout: post
+title: SASRec: Self-Attentive Sequential Recommendation
+subtitle : ICDM '18, Paper Review
+tags: [Review, Sequential Recommendation, Recommendation, Attentive]
+author: yoony
+comments : False
+---
+
+
+<br>
+
+<h3>1. Backgrounds </h3>
+
+이용자가 아이템에 대한 어떤 행위를 한다고 했을 때 행위의 종류를 Behavior Type, 행위의 대상을 Behavior Object라고 한다.
+시간 순서대로 정렬된 하나의 Sequence Data를 통해 다음에는 어떤 행동을 할 지 예측하는 것이 바로 광의의 Sequential Recommendation.
+
+`이미지`
+
+
+<h5> Transaction-based Behavior Sequence </h5>
+
+`이미지`
+
+조금 더 자세하게 들어가보면  다음 3가지로 나눌 수 있음
+
+- 단일 Behavior Type만 사용하는 경우
+- 단일 Behavior Object를 사용하는 경우
+- 아니면 둘 다 모든 경우를 사용하는 경우
+
+
+보편적으로 의미하는 Sequential Recommendation은 위의 사진 처럼 단일 Behavior Type(예. 구매)만 있는 Sequence Data를 사용하는 경우
+
+이러한 의미를 갖는 Sequential Recommendation을 모델링 하기 위해 
+
+- MC(Marcov Chain)-based
+    
+    가장 마지막이나 마지막 그 부근에 방문했던 아이템들에 대해서만 고려
+    
+    상대적으로 긴 시퀀스나 복잡한 시나리오의 특성 추출은 어려움
+    
+- RNN-based
+    
+    대표적인 예로 GRU4Rec
+    
+    RNN이라는 Sequential Modeling 자체가 갖는 Parallelization 불가의 문제 있음
+    
+    
+그래서 이러한 단점을 극복할 수 있도록 Self-Attention을 적용했다.
+
+
+<h3>2. Methodology </h3>
+
+`이미지`
+`이미지`
+`이미지`
+
+
+<h3>3. Experiments </h3>
+- 데이터셋 Amazon Beuty, Amazon Games, Steam, MovieLens-1M
+- 비교 대상 모델로는 일반 기법, 마르코프 체인 적용 기반 기법, DNN 기반 기법
+- 세부 모델 튜닝은 다음과 같음
+    
+    Self-Attention Block 2개 / Learnable Position Embedding 
+    
+    Shared Item Embedding 
+    
+- Hit Rate@10, NDCG @10 사용
+
+`이미지`
+
+
+SASRec이 가장 좋은 성능을 보이고 있고
+
+다양한 밀집도를 가진 데이터에서 모두 예측이 잘 이루어지기 때문으로 보임
+
+우측 2개 열은 신경망을 사용하지 않은 모델과 사용한 모델보다 SASRec의 성능이 얼마나 좋은지 비교
+
+음영처리를 한 부분이 SASRec을 사용함으로서 향상된 정도가 더 낮은 경우
+
+⇒ 원래의 접근 방식이 해당 데이터셋에서 더 나은 성능을 보였다
+
+데이터셋의 밀집도에 따라 해석해 보면,
+
+- 데이터가 희소할 수록 신경망을 사용하지 않은 기법들이 더 좋은 성능
+- 밀집도가 높을수록 신경망 기법들이 더 나은 성능
+
+**Training Efficiency**   빠르게 수렴하고 성능이 유지됨
+
+
+**Visualizing Attention Weights**
+
+마지막 15스텝, 마지막 15포지션에서의 Attention Weight를 비교한 것
+
+바로 이전의 아이템인 마르코프 체인은 대각성분만 진한색임
+
+(a)-(c) : 밀집도가 더 높은 무비렌즈가 전반적으로 진한색을 보임 ⇒ 데이터셋의 밀집도에 따라 다른 Attention Weight를 도출
+
+(b)-(c) : Positional Encoding의 유무 ⇒ 있다면 Sequence Data의 요소에 위치 특성을 반영
+
+(c)-(d) : Attention Block의 개수 ⇒많이 쌓을 수록 더 최근의 것에 Attention Weight 가 높다 (이미 과거의 맥락을 담고 있어서 두 번째에서는 이전 데이터를 더 많이 고려할 필요가 없기 때문으로 추정)
+
+`이미지`
