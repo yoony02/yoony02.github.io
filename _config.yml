@@ -1,6 +1,6 @@
 # Site Settings
 baseurl: ""
-url : "https://yoony02.github.io/yoony02"
+url : "https://yoony02.github.io"
 
 # Blog Settings
 theme_settings :
