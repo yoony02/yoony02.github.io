@@ -9,7 +9,7 @@ theme_settings :
 
   # Profile Settings
   profile :
-    image : assets/img/000032.JPG
+    image : assets/img/profile.jpg
     username : Heeyoon Yang
     description : Hi.
     experience :
