@@ -9,13 +9,16 @@ theme_settings :
 
   # Profile Settings
   profile :
-    image : assets/img/000032.png
+    image : assets/img/000032.JPG
     username : Heeyoon Yang
     description : Hi.
     experience :
+      - start : 2021-08-02
+        end : 
+        experience : M.E., Artificial Intelligence, SKKU
       - start : 2016-03-02
         end : 2021-08-24
-        experience : Library and Information Science, SKKU
+        experience : B.S., Library and Information Science, SKKU
       - start : 2019-09-01
         end : 2019-12-20
         experience : Exchange Student, SICE, Indiana University
