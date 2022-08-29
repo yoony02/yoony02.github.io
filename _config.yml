@@ -11,7 +11,7 @@ theme_settings :
   profile :
     image : assets/img/profile.jpg
     username : Heeyoon Yang
-    description : Hi.
+    description : 백업 
     experience :
       - start : 2021-08-02
         end : 
