@@ -11,14 +11,11 @@ theme_settings :
   profile :
     image : assets/img/smile.png
     username : Heeyoon Yang
-    description : 
+    description : Hi.
     experience :
       - start : 2016-03-02
         end : 2021-08-24
         experience : Library and Information Science, SKKU
-      - start : 2019-09-01
-        end : 2019-12-15
-        experience : Exchange Student, SICE, Indiana University
     skills : 
       - skill : Recommendation Systems, Session-based Recommendations, Graph Neural Networks
         value : 85  # Percent value
