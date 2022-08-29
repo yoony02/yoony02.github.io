@@ -1,6 +1,6 @@
 # Site Settings
 baseurl: ""
-url : "https://naye0ng.github.io"
+url : "https://yoony02.github.io/yoony02"
 
 # Blog Settings
 theme_settings :
@@ -10,21 +10,24 @@ theme_settings :
   # Profile Settings
   profile :
     image : assets/img/smile.png
-    username : Nayeong Kim
-    description : creator of Grape-Theme! Grape-Theme is my first jekyll theme and you can customize this theme easily.
+    username : Heeyoon Yang
+    description : 
     experience :
-      - start : 2017-05-03
-        end : 2018-05-06
-        experience : company name, title
+      - start : 2016-03-02
+        end : 2021-08-24
+        experience : Library and Information Science, SKKU
+      - start : 2019-09-01
+        end : 2019-12-15
+        experience : Exchange Student, SICE, Indiana University
     skills : 
-      - skill : HTML5 & CSS
+      - skill : Recommendation Systems, Session-based Recommendations, Graph Neural Networks
         value : 85  # Percent value
         
   # Icons
   icons :
-    email:  # Full email address, e.g. "sample@google.com"
+    email:  yoooyblooming@gmail.com
     linkedin:  # Full URL 
-    github: naye0ng
+    github: yoony02
     gitlab: 
     bitbucket: 
     google_plus:
