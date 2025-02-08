@@ -1,26 +1,63 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
 
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
+# Site settings
+title: "Storage"
+description: > # this means to ignore newlines until "email:"
+  저장소
 
-# Setup
-title:            Blog
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              https://hyde.getpoole.com/
-baseurl:          /
+email: yooonyblooming@gmail.com
+#blog logo
+logo: "/assets/images/IMG_2785.jpeg"
+float_logo: true # true, false (default)
 
-author:
-  name:           'hyoon'
-  url:            https://quasar-mars-030.notion.site/Heeyoon-Yang-d5eafbaba3c542589a0975a1e00b7091?pvs=4
+# blog cover
+cover: "/assets/images/background_purple_sticky.jpg"
 
-paginate:         5
+name: '유니블'
+author: '유니블'
+author_image: "/assets/images/IMG_2785.jpeg"
 
-# Custom vars
-version:          0.0.1
+paginate:	5
 
-github:
-  repo:           https://github.com/yoony02
+url: https://yoony02.github.io" # the base hostname & protocol for your site
+baseurl: ''
+#used to display twitter cards
+twitter_handle: ''
+
+#fill in disqus shortname to use disqus
+#disqus: disqus-shortname
+
+#google_analytics: UA-XXXXX-X
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/???
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+#  - icon:	facebook
+#    url:	https://facebook.com/???
+#    desc: Connect with me facebook
+#    share_url: https://www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/yoony02
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+#  - icon:	google-plus
+#    url:	https://google.com/???
+#    desc:	Add me on google+
+#    share_url:
+#    share_title:
+#    share_link:
